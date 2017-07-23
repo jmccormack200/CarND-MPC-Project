@@ -1,0 +1,23 @@
+The Model
+
+1) Student describes their model in detail. This includes the state, actuators and
+update equations:
+
+My model is based off the one presented in the lesson quiz. Most of the
+equations were able to be used directly from the quiz. The state is represented
+by the variables: [x,y,ψ,v,cte,eψ]. We had two main actuators available to us,
+throttle and steering. The update equations were adapted from the quiz. 
+
+2) Student discusses the reasoning behind the chosen N (timestep length) and
+dt (elapsed duration between timesteps) values. Additionally the student
+details the previous values tried:
+
+I used the baseline N and dt from the quiz, I was able to get the model to
+converge without altering these values.
+
+3) Student provides details on how they deal with latency:
+
+Latency was a bit tricky. To begin with I just got the model working with 0
+latency. Then it became apparent that the solution was to predict what
+the model would look like in 100 ms and then use those values instead
+of the current state. This is done on line 101-104 of main.
